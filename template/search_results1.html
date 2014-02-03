@@ -1,0 +1,12 @@
+<p>You searched for <strong>{{firstname}} {{secondname}}</strong> latest books</p>
+
+{% if books %}
+    <p>Found {{ books|length }} book{{ books|pluralize }}.</p>
+    <ul>
+        {% for book in books %}
+        <li>{{ book.title }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+  #  <p>No books matched your search criteria.</p>
+{% endif %}
